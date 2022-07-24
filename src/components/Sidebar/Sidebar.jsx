@@ -26,10 +26,10 @@ const categories = [
 ];
 
 const demoCategories = [
-  { label: "Comedy", value: "popular" },
-  { label: "Action", value: "top_rated" },
-  { label: "Horror", value: "upcoming" },
-  { label: "Animations", value: "upcomingNew" },
+  { label: "Comedy", value: "Comedy" },
+  { label: "Action", value: "Action" },
+  { label: "Horror", value: "Horror" },
+  { label: "Animations", value: "Animations" },
 ];
 
 const Sidebar = ({ setMobileOpen }) => {
@@ -48,6 +48,20 @@ const Sidebar = ({ setMobileOpen }) => {
       <Divider />
       <List>
         <ListSubheader>Categories</ListSubheader>
+        {categories.map(({ label, value }) => (
+          <Link key={value} className={classes.links} to="/">
+            <ListItem onClick={() => {}} button>
+              <ListItemIcon>
+                <img
+                  src={genreIcons[label.toLowerCase()]}
+                  className={classes.genreImage}
+                  height={30}
+                />
+              </ListItemIcon>
+              <ListItemText primary={label} />
+            </ListItem>
+          </Link>
+        ))}
       </List>
     </>
   );
