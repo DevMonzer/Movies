@@ -1,8 +1,8 @@
 {
-  "name": "filmpire",
+  "name": "movies",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/filmpire/",
+  "homepage": "/movies/",
   "dependencies": {
     "@alan-ai/alan-sdk-web": "^1.8.28",
     "@emotion/react": "^11.4.1",
