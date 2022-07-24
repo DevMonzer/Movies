@@ -16,7 +16,11 @@ import {
 } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
+import useStyles from "./styles";
+
 const Navbar = () => {
+  const classes = useStyles();
+
   return (
     <>
       <AppBar position="fixed">
