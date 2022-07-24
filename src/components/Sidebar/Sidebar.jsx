@@ -19,6 +19,14 @@ const blueLogo =
 const redLogo =
   "https://i.ibb.co/wsjHZN1/138faa461ff64660bae4bf45d8d84be9-1.png";
 
+const categories = [
+  { label: "Popular", value: "popular" },
+  { label: "Top Rated", value: "top_rated" },
+  { label: "Upcoming", value: "upcoming" },
+];
+
+const demoCategories = ["Comedy", "Action", "Horror", "Animations"];
+
 const Sidebar = ({ setMobileOpen }) => {
   const theme = useTheme();
   const classes = useStyles();
@@ -32,6 +40,10 @@ const Sidebar = ({ setMobileOpen }) => {
           alt="Movies"
         />
       </Link>
+      <Divider />
+      <List>
+        <ListSubheader>Categories</ListSubheader>
+      </List>
     </>
   );
 };
