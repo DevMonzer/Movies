@@ -24,6 +24,8 @@ const Navbar = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
   const theme = useTheme();
 
+  const isAuthenticated = true;
+
   return (
     <>
       <AppBar position="fixed">
@@ -42,6 +44,16 @@ const Navbar = () => {
           <IconButton color="inherit" sx={{ ml: 1 }} onClick={() => {}}>
             {theme.palette.mode === "dark" ? <Brightness4 /> : <Brightness7 />}
           </IconButton>
+          {!isMobile && "Search..."}
+          <div>
+            {!isAuthenticated ? (
+               <Button color="inherit" onClick={() => {}}>
+               Login &nbsp; <AccountCircle />
+             </Button>
+            ): (
+
+            )}
+          </div>
         </Toolbar>
       </AppBar>
     </>
