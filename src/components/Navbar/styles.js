@@ -17,4 +17,10 @@ export default makeStyles((theme) => ({
       display: "none",
     },
   },
+  drawer: {
+    [theme.breakpoints.up("sm")]: {
+      width: drawerWidth,
+      flexShrink: 0,
+    },
+  },
 }));
