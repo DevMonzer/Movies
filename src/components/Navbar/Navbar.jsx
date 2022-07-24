@@ -40,7 +40,7 @@ const Navbar = () => {
             </IconButton>
           )}
           <IconButton color="inherit" sx={{ ml: 1 }} onClick={() => {}}>
-            <Brightness7 />
+            {theme.palette.mode === "dark" ? <Brightness4 /> : <Brightness7 />}
           </IconButton>
         </Toolbar>
       </AppBar>
