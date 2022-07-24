@@ -61,12 +61,13 @@ const Navbar = () => {
                 {!isMobile && <>My Movies &nbsp;</>}
                 <Avatar
                   style={{ width: 30, height: 30 }}
-                  alt={user.username}
+                  alt={`name`}
                   src={`https://www.seekpng.com/ipng/u2q8y3o0e6q8q8y3_person-avatar-placeholder/`}
                 />
               </Button>
             )}
           </div>
+          {isMobile && <Search />}
         </Toolbar>
       </AppBar>
     </>
