@@ -1,17 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
-import { Provider } from "react-redux";
+// import { Provider } from 'react-redux';
 
 import App from "./components/App";
-import store from "./app/store";
+// import store from "./app/store";
 import "./index.css";
-import ToggleColorModeProvider from "./utils/ToggleColorMode";
+// import ToggleColorModeProvider from "./utils/ToggleColorMode";
 
 ReactDOM.render(
   // <Provider store={store}>
   // <ToggleColorModeProvider>
-  <BrowserRouter basename="/filmpire">
+  <BrowserRouter basename="/movies">
     <App />
   </BrowserRouter>,
   // </ToggleColorModeProvider>
