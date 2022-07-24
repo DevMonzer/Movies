@@ -15,12 +15,14 @@ import {
   Brightness7,
 } from "@mui/icons-material";
 import { Link } from "react-router-dom";
+import { useTheme } from "@mui/material/styles";
 
 import useStyles from "./styles";
 
 const Navbar = () => {
   const classes = useStyles();
   const isMobile = useMediaQuery("(max-width:600px)");
+  const theme = useTheme();
 
   return (
     <>
@@ -37,6 +39,9 @@ const Navbar = () => {
               <Menu />
             </IconButton>
           )}
+          <IconButton color="inherit" sx={{ ml: 1 }} onClick={() => {}}>
+            <Brightness7 />
+          </IconButton>
         </Toolbar>
       </AppBar>
     </>
