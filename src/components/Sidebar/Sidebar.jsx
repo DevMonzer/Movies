@@ -9,8 +9,15 @@ import {
   Box,
   CircularProgress,
 } from "@mui/material";
+import { Link } from "react-router-dom";
+import { useTheme } from "@mui/styles";
 
-const Sidebar = () => {
+import useStyles from "./styles";
+
+const Sidebar = ({ setMobileOpen }) => {
+  const theme = useTheme();
+  const classes = useStyles();
+
   return <div>Sidebar</div>;
 };
 
