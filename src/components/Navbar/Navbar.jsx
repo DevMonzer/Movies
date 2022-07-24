@@ -31,7 +31,7 @@ const Navbar = () => {
               color="inherit"
               edge="start"
               style={{ outline: "none" }}
-              onClick={() => setMobileOpen((prevMobileOpen) => !prevMobileOpen)}
+              onClick={() => {}}
               className={classes.menuButton}
             >
               <Menu />
