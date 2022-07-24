@@ -52,11 +52,7 @@ const Sidebar = ({ setMobileOpen }) => {
           <Link key={value} className={classes.links} to="/">
             <ListItem onClick={() => {}} button>
               <ListItemIcon>
-                <img
-                  src={genreIcons[label.toLowerCase()]}
-                  className={classes.genreImage}
-                  height={30}
-                />
+                <img src={redLogo} className={classes.genreImage} height={30} />
               </ListItemIcon>
               <ListItemText primary={label} />
             </ListItem>
