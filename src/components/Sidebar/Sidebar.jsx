@@ -25,7 +25,12 @@ const categories = [
   { label: "Upcoming", value: "upcoming" },
 ];
 
-const demoCategories = ["Comedy", "Action", "Horror", "Animations"];
+const demoCategories = [
+  { label: "Comedy", value: "popular" },
+  { label: "Action", value: "top_rated" },
+  { label: "Horror", value: "upcoming" },
+  { label: "Animations", value: "upcomingNew" },
+];
 
 const Sidebar = ({ setMobileOpen }) => {
   const theme = useTheme();
