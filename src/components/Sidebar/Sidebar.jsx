@@ -15,9 +15,9 @@ import { useTheme } from "@mui/styles";
 import useStyles from "./styles";
 
 const blueLogo =
-  "https://fontmeme.com/permalink/210930/8531c658a743debe1e1aa1a2fc82006e.png";
+  "https://i.ibb.co/QD6HMvd/138faa461ff64660bae4bf45d8d84be9.png";
 const redLogo =
-  "https://fontmeme.com/permalink/210930/6854ae5c7f76597cf8680e48a2c8a50a.png";
+  "https://i.ibb.co/wsjHZN1/138faa461ff64660bae4bf45d8d84be9-1.png";
 
 const Sidebar = ({ setMobileOpen }) => {
   const theme = useTheme();
