@@ -48,7 +48,7 @@ const Sidebar = ({ setMobileOpen }) => {
       <Divider />
       <List>
         <ListSubheader>Categories</ListSubheader>
-        {categories.map(({ label, value }) => (
+        {demoCategories.map(({ label, value }) => (
           <Link key={value} className={classes.links} to="/">
             <ListItem onClick={() => {}} button>
               <ListItemIcon>
