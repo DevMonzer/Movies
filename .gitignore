@@ -6,9 +6,9 @@
 .pnp.js
 
 # folders & files 
-/features
-/services
-/utils
+features
+services
+utils
 
 # testing
 /coverage
