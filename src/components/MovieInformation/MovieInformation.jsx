@@ -38,6 +38,12 @@ const MovieInformation = () => {
   const { data, isFetching, error } = useGetMovieQuery(id);
   const dispatch = useDispatch();
 
+  const isMovieFavorited = false;
+  const isOpen = true;
+
+  const addToFavorites = async () => {};
+  const addToWatchlist = async () => {};
+
   if (isFetching) {
     return (
       <Box display="flex" justifyContent="center" alignItems="center">
@@ -148,6 +154,71 @@ const MovieInformation = () => {
                   )
               )
               .slice(0, 6)}
+        </Grid>
+        <Grid item container style={{ marginTop: "2rem" }}>
+          <div className={classes.buttonsContainer}>
+            <Grid item xs={12} sm={6} className={classes.buttonsContainer}>
+              <ButtonGroup size="medium" variant="outlined">
+                <Button
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={data?.homepage}
+                  endIcon={<Language />}
+                >
+                  Website
+                </Button>
+                <Button
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={`https://www.imdb.com/title/${data.imdb_id}`}
+                  endIcon={<MovieIcon />}
+                >
+                  IMDB
+                </Button>
+                <Button
+                  onClick={() => setOpen(true)}
+                  href="#"
+                  endIcon={<Theaters />}
+                >
+                  Trailer
+                </Button>
+              </ButtonGroup>
+            </Grid>
+            <Grid item xs={12} sm={6} className={classes.buttonsContainer}>
+              <ButtonGroup size="medium" variant="outlined">
+                <Button
+                  onClick={addToFavorites}
+                  endIcon={
+                    isMovieFavorited ? <Favorite /> : <FavoriteBorderOutlined />
+                  }
+                >
+                  {isMovieFavorited ? "Favorite" : "Unfavorite"}
+                </Button>
+                <Button
+                  onClick={addToWatchlist}
+                  // endIcon={isMovieWatchlisted ? <Remove /> : <PlusOne />}
+                >
+                  Watchlist
+                  {/* {isMovieWatchlisted ? "Remove" : "Watchlist"} */}
+                </Button>
+
+                <Button
+                  endIcon={<ArrowBack />}
+                  sx={{ borderColor: "primary.main" }}
+                >
+                  <Typography
+                    component={Link}
+                    to="/"
+                    color="inherit"
+                    variant="subtitle2"
+                    style={{ textDecoration: "none" }}
+                  >
+                    Back
+                  </Typography>
+                </Button>
+              </ButtonGroup>
+            </Grid>
+          </div>
         </Grid>
       </Grid>
     </Grid>
