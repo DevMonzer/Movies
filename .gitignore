@@ -5,6 +5,11 @@
 /.pnp
 .pnp.js
 
+# folders & files 
+/features
+/services
+/utils
+
 # testing
 /coverage
 
