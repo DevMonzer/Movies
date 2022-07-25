@@ -12,6 +12,7 @@ import {
 import { Link } from "react-router-dom";
 import { useTheme } from "@mui/styles";
 import { useGetGenresQuery } from "../../services/TMDB";
+import genreIcons from "../../assets/genres";
 
 import useStyles from "./styles";
 
@@ -26,18 +27,10 @@ const categories = [
   { label: "Upcoming", value: "upcoming" },
 ];
 
-const demoCategories = [
-  { label: "Comedy", value: "Comedy" },
-  { label: "Action", value: "Action" },
-  { label: "Horror", value: "Horror" },
-  { label: "Animations", value: "Animations" },
-];
-
 const Sidebar = ({ setMobileOpen }) => {
   const theme = useTheme();
   const classes = useStyles();
   const { data, error, isFetching } = useGetGenresQuery();
-
   // console.log(data);
 
   return (
@@ -74,13 +67,13 @@ const Sidebar = ({ setMobileOpen }) => {
           data.genres.map(({ name, id }) => (
             <Link key={name} className={classes.links} to="/">
               <ListItem onClick={() => {}} button>
-                {/* <ListItemIcon>
+                <ListItemIcon>
                   <img
                     src={genreIcons[name.toLowerCase()]}
                     className={classes.genreImage}
                     height={30}
                   />
-                </ListItemIcon> */}
+                </ListItemIcon>
                 <ListItemText primary={name} />
               </ListItem>
             </Link>
