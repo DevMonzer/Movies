@@ -24,7 +24,16 @@ import { Link, useParams, userParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 
+import { useGetMovieQuery } from "../../services/TMDB";
+
+import useStyles from "./styles";
+
 const MovieInformation = () => {
+  const classes = useStyles();
+  const { id } = useParams();
+  const { user } = useSelector(userSelector);
+  const { data, isFetching, error } = useGetMovieQuery(id);
+
   return <div>MovieInformation</div>;
 };
 
