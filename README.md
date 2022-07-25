@@ -1,6 +1,8 @@
 # Movies App 🎥
 
-Movies app watch live -> 
+Movies app watch live ->
+
+<a href="https://ibb.co/VB6Ds1W"><img src="https://i.ibb.co/cTqtjBc/Capture.jpg" alt="Capture" border="0"></a>
 
 ## What to do  
 1. Clone this repo     
