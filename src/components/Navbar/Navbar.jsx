@@ -19,6 +19,7 @@ import {
 } from "@mui/icons-material";
 
 import { Sidebar, Search } from "..";
+import { fetchToken } from "../../utils";
 
 import useStyles from "./styles";
 
@@ -50,7 +51,7 @@ const Navbar = () => {
           {!isMobile && <Search />}
           <div>
             {!isAuthenticated ? (
-              <Button color="inherit" onClick={() => {}}>
+              <Button color="inherit" onClick={fetchToken}>
                 Login &nbsp; <AccountCircle />
               </Button>
             ) : (
