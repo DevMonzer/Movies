@@ -14,6 +14,8 @@ const Profile = () => {
     window.location.href = "/filmpire";
   };
 
+  const favoriteMovies = [];
+
   return (
     <Box>
       <Box display="flex" justifyContent="space-between">
@@ -24,6 +26,13 @@ const Profile = () => {
           Logout &nbsp; <ExitToApp />
         </Button>
       </Box>
+      {!favoriteMovies.length ? (
+        <Typography variant="h5">
+          Add favorites or watchlist some movies to see here!
+        </Typography>
+      ) : (
+        <Box>Favorite Movies</Box>
+      )}
     </Box>
   );
 };
