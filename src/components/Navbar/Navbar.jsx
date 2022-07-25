@@ -1,4 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
+import { useTheme } from "@mui/material/styles";
+
 import {
   AppBar,
   Button,
@@ -14,10 +17,9 @@ import {
   Brightness4,
   Brightness7,
 } from "@mui/icons-material";
-import { Link } from "react-router-dom";
-import { useTheme } from "@mui/material/styles";
 
 import Sidebar from "../Sidebar/Sidebar";
+
 import useStyles from "./styles";
 
 const Navbar = () => {
