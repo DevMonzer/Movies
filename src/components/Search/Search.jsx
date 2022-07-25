@@ -12,7 +12,24 @@ const Search = () => {
   const dispatch = useDispatch();
   const location = useLocation();
 
-  return <div>Search</div>;
+  return (
+    <div className={classes.searchContainer}>
+      <TextField
+        onKeyPress={handleKeyPress}
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        variant="standard"
+        InputProps={{
+          className: classes.searchInput,
+          startAdornment: (
+            <InputAdornment position="start">
+              <SearchIcon />
+            </InputAdornment>
+          ),
+        }}
+      />
+    </div>
+  );
 };
 
 export default Search;
