@@ -27,7 +27,7 @@ const Navbar = () => {
   const classes = useStyles();
   const isMobile = useMediaQuery("(max-width:600px)");
   const theme = useTheme();
-  const isAuthenticated = true;
+  const isAuthenticated = false;
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
