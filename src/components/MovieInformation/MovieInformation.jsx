@@ -24,6 +24,8 @@ import { Link, useParams, userParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 
+import { userSelector } from "../../features/auth";
+
 import { useGetMovieQuery } from "../../services/TMDB";
 
 import useStyles from "./styles";
@@ -50,7 +52,22 @@ const MovieInformation = () => {
     );
   }
 
-  return <div>MovieInformation</div>;
+  return (
+    <Grid container className={classes.containerSpaceAround}>
+      <Grid
+        item
+        sm={12}
+        lg={4}
+        style={{ display: "flex", marginBottom: "30px" }}
+      >
+        <img
+          className={classes.poster}
+          src={`https://image.tmdb.org/t/p/w500/${data?.poster_path}`}
+          alt={data?.title}
+        />
+      </Grid>
+    </Grid>
+  );
 };
 
 export default MovieInformation;
