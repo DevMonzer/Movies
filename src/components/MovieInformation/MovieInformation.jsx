@@ -24,10 +24,15 @@ import { Link, useParams, userParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 
-import { userSelector } from "../../features/auth";
+import { MovieList } from "..";
 
+import { userSelector } from "../../features/auth";
 import { selectGenreOrCategory } from "../../features/currentGenreOrCategory";
-import { useGetMovieQuery } from "../../services/TMDB";
+import {
+  useGetMovieQuery,
+  useGetRecommendationsQuery,
+  useGetListQuery,
+} from "../../services/TMDB";
 import genreIcons from "../../assets/genres";
 import useStyles from "./styles";
 
@@ -36,6 +41,9 @@ const MovieInformation = () => {
   const { id } = useParams();
   const { user } = useSelector(userSelector);
   const { data, isFetching, error } = useGetMovieQuery(id);
+  const { data: recommendations, isFetching: isRecommendationsFetching } =
+    useGetRecommendationsQuery({ list: "/recommendations", movie_id: id });
+
   const dispatch = useDispatch();
 
   const isMovieFavorited = false;
@@ -221,7 +229,7 @@ const MovieInformation = () => {
           </div>
         </Grid>
       </Grid>
-      {/* <Box marginTop="5rem" width="100%">
+      <Box marginTop="5rem" width="100%">
         <Typography variant="h3" align="center" gutterBottom>
           You might also like
         </Typography>
@@ -230,7 +238,7 @@ const MovieInformation = () => {
         ) : (
           <Box>Sorry, nothing is found.</Box>
         )}
-      </Box> */}
+      </Box>
     </Grid>
   );
 };
