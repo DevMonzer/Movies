@@ -20,6 +20,9 @@ const Profile = () => {
         <Typography variant="h4" gutterBottom>
           My Profile
         </Typography>
+        <Button color="inherit" onClick={logout}>
+          Logout &nbsp; <ExitToApp />
+        </Button>
       </Box>
     </Box>
   );
