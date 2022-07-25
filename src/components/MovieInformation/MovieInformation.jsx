@@ -34,6 +34,22 @@ const MovieInformation = () => {
   const { user } = useSelector(userSelector);
   const { data, isFetching, error } = useGetMovieQuery(id);
 
+  if (isFetching) {
+    return (
+      <Box display="flex" justifyContent="center" alignItems="center">
+        <CircularProgress size="8rem" />
+      </Box>
+    );
+  }
+
+  if (error) {
+    return (
+      <Box display="flex" justifyContent="center" alignItems="center">
+        <Link to="/">Something went wrong! - Go back to Home</Link>
+      </Box>
+    );
+  }
+
   return <div>MovieInformation</div>;
 };
 
