@@ -1,4 +1,7 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+
 import {
   Divider,
   List,
@@ -9,8 +12,8 @@ import {
   Box,
   CircularProgress,
 } from "@mui/material";
-import { Link } from "react-router-dom";
 import { useTheme } from "@mui/styles";
+
 import { useGetGenresQuery } from "../../services/TMDB";
 import genreIcons from "../../assets/genres";
 
