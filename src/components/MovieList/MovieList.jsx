@@ -4,7 +4,10 @@ import { Grid } from "@mui/material";
 import useStyles from "./styles";
 import { Movie } from "..";
 
-const MovieList = () => {
+const MovieList = ({ movies, numberOfMovies, excludeFirst }) => {
+  const classes = useStyles();
+  const startFrom = excludeFirst ? 1 : 0;
+
   return (
     <Grid container className={classes.movieContainer}>
       {movies.results.slice(startFrom, numberOfMovies).map((movie, i) => (
