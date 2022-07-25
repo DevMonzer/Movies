@@ -26,6 +26,7 @@ import axios from "axios";
 
 import { userSelector } from "../../features/auth";
 
+import { selectGenreOrCategory } from "../../features/currentGenreOrCategory";
 import { useGetMovieQuery } from "../../services/TMDB";
 import genreIcons from "../../assets/genres";
 import useStyles from "./styles";
@@ -95,7 +96,7 @@ const MovieInformation = () => {
               key={genre.name}
               className={classes.links}
               to="/"
-              onClick={() => {}}
+              onClick={() => dispatch(selectGenreOrCategory(genre.id))}
             >
               <img
                 src={genreIcons[genre.name.toLowerCase()]}
