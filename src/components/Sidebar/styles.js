@@ -7,7 +7,7 @@ export default makeStyles((theme) => ({
     padding: "10% 0",
   },
   image: {
-    width: "60%",
+    width: "70%",
   },
   links: {
     color: theme.palette.text.primary,
