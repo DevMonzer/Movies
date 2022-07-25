@@ -35,9 +35,16 @@ export const tmdbApi = createApi({
         ) {
           return `discover/movie?with_genres=${genreIdOrCategoryName}&page=${page}&api_key=${tmdbApiKey}`;
         }
+
         // Get Popular Movies
         return `movie/popular?page=${page}&api_key=${tmdbApiKey}`;
       },
+    }),
+
+    // Get a Movie
+    getMovie: builder.query({
+      query: (id) =>
+        `/movie/${id}?api_key=${tmdbApiKey}&append_to_response=videos,credits`,
     }),
   }),
 });
