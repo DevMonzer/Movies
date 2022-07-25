@@ -27,7 +27,7 @@ import axios from "axios";
 import { userSelector } from "../../features/auth";
 
 import { useGetMovieQuery } from "../../services/TMDB";
-
+import genreIcons from "../../assets/genres";
 import useStyles from "./styles";
 
 const MovieInformation = () => {
@@ -35,6 +35,7 @@ const MovieInformation = () => {
   const { id } = useParams();
   const { user } = useSelector(userSelector);
   const { data, isFetching, error } = useGetMovieQuery(id);
+  const dispatch = useDispatch();
 
   if (isFetching) {
     return (
@@ -81,13 +82,31 @@ const MovieInformation = () => {
               gutterBottom
               style={{ marginLeft: "10px" }}
             >
-              {/* {Math.round(data?.vote_average / 10)} */}
               {(data?.vote_average).toFixed(1)}/10
             </Typography>
           </Box>
           <Typography variant="h6" align="center" gutterBottom>
             {data?.runtime} min | Language: {data?.spoken_languages[0].name}
           </Typography>
+        </Grid>
+        <Grid item className={classes.genreContainer}>
+          {data?.genres?.map((genre, i) => (
+            <Link
+              key={genre.name}
+              className={classes.links}
+              to="/"
+              onClick={() => {}}
+            >
+              <img
+                src={genreIcons[genre.name.toLowerCase()]}
+                className={classes.genreImage}
+                height={30}
+              />
+              <Typography color="textPrimary" variant="subtitle1">
+                {genre?.name}
+              </Typography>
+            </Link>
+          ))}
         </Grid>
       </Grid>
     </Grid>
