@@ -66,6 +66,29 @@ const MovieInformation = () => {
           alt={data?.title}
         />
       </Grid>
+      <Grid item container direction="column" lg={7}>
+        <Typography variant="h3" align="center" gutterBottom>
+          {data?.title} ({data.release_date.split("-")[0]})
+        </Typography>
+        <Typography variant="h5" align="center" gutterBottom>
+          {data?.tagline}
+        </Typography>
+      </Grid>
+      <Grid container className={classes.containerSpaceAround}>
+        <Box display="flex" align="center">
+          <Rating readOnly value={data.vote_average / 2}></Rating>
+          <Typography
+            variant="subtitle1"
+            gutterBottom
+            style={{ marginLeft: "10px" }}
+          >
+            {data?.vote_average}/10{" "}
+          </Typography>
+        </Box>
+        <Typography variant="h6" align="center" gutterBottom>
+          {data?.runtime} min | Language: {data?.spoken_languages[0].name}
+        </Typography>
+      </Grid>
     </Grid>
   );
 };
