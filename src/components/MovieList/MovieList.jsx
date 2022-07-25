@@ -5,8 +5,8 @@ import useStyles from "./styles";
 import { Movie } from "..";
 
 const MovieList = ({ movies }) => {
+  console.log(movies);
   const classes = useStyles();
-  const startFrom = excludeFirst ? 1 : 0;
 
   return (
     <Grid container className={classes.movieContainer}>

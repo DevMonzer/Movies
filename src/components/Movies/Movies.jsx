@@ -13,7 +13,7 @@ import { MovieList } from "..";
 
 const Movies = () => {
   const { data } = useGetMoviesQuery();
-  // console.log(data);
+  console.log(data);
 
   return (
     <div>
