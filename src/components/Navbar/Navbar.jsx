@@ -19,7 +19,7 @@ import {
 } from "@mui/icons-material";
 
 import { Sidebar, Search } from "..";
-import { fetchToken } from "../../utils";
+import { fetchToken, createSessionId, moviesApi } from "../../utils";
 
 import useStyles from "./styles";
 
@@ -29,6 +29,29 @@ const Navbar = () => {
   const theme = useTheme();
   const isAuthenticated = false;
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const token = localStorage.getItem("request_token");
+  const sessionIdFromLocalStorage = localStorage.getItem("session_id");
+
+  useEffect(() => {
+    const logInUser = async () => {
+      if (token) {
+        if (sessionIdFromLocalStorage) {
+          const { data: userData } = await moviesApi.get(
+            `/account?session_id=${sessionIdFromLocalStorage}`
+          );
+          dispatch(setUser(userData));
+        } else {
+          const sessionId = await createSessionId();
+          const { data: userData } = await moviesApi.get(
+            `/account?session_id=${sessionId}`
+          );
+          dispatch(setUser(userData));
+        }
+      }
+    };
+    logInUser();
+  }, [token]);
 
   return (
     <>
