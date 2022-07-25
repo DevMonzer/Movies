@@ -15,6 +15,7 @@ import {
 import { useTheme } from "@mui/styles";
 
 import { useGetGenresQuery } from "../../services/TMDB";
+import { selectGenreOrCategory } from "../../features/currentGenreOrCategory";
 import genreIcons from "../../assets/genres";
 
 import useStyles from "./styles";
@@ -35,6 +36,7 @@ const Sidebar = ({ setMobileOpen }) => {
   const classes = useStyles();
   const { data, error, isFetching } = useGetGenresQuery();
   // console.log(data);
+  const dispatch = useDispatch();
 
   return (
     <>
@@ -50,7 +52,10 @@ const Sidebar = ({ setMobileOpen }) => {
         <ListSubheader>Categories</ListSubheader>
         {categories.map(({ label, value }) => (
           <Link key={value} className={classes.links} to="/">
-            <ListItem onClick={() => {}} button>
+            <ListItem
+              onClick={() => dispatch(selectGenreOrCategory(value))}
+              button
+            >
               {/* <ListItemIcon>
                 <img src={redLogo} className={classes.genreImage} height={30} />
               </ListItemIcon> */}
@@ -69,7 +74,10 @@ const Sidebar = ({ setMobileOpen }) => {
         ) : (
           data.genres.map(({ name, id }) => (
             <Link key={name} className={classes.links} to="/">
-              <ListItem onClick={() => {}} button>
+              <ListItem
+                onClick={() => dispatch(selectGenreOrCategory(id))}
+                button
+              >
                 <ListItemIcon>
                   <img
                     src={genreIcons[name.toLowerCase()]}
