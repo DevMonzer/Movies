@@ -18,7 +18,7 @@ import {
   Brightness7,
 } from "@mui/icons-material";
 
-import Sidebar from "../Sidebar/Sidebar";
+import { Sidebar, Search } from "..";
 
 import useStyles from "./styles";
 
@@ -47,7 +47,7 @@ const Navbar = () => {
           <IconButton color="inherit" sx={{ ml: 1 }} onClick={() => {}}>
             {theme.palette.mode === "dark" ? <Brightness4 /> : <Brightness7 />}
           </IconButton>
-          {!isMobile && "Search..."}
+          {!isMobile && <Search />}
           <div>
             {!isAuthenticated ? (
               <Button color="inherit" onClick={() => {}}>
@@ -70,7 +70,7 @@ const Navbar = () => {
               </Button>
             )}
           </div>
-          {isMobile && "Search..."}
+          {isMobile && <Search />}
         </Toolbar>
       </AppBar>
       <div>
