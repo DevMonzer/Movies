@@ -16,6 +16,5 @@ https://www.themoviedb.org/documentation/api
 * Material UI
 * React js
 * Redux Toolkit
-* React Redux
 * React Router
 * TMDB API
