@@ -12,6 +12,13 @@ const Search = () => {
   const dispatch = useDispatch();
   const location = useLocation();
 
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      // console.log(query);
+      dispatch(searchMovie(query));
+    }
+  };
+
   return (
     <div className={classes.searchContainer}>
       <TextField
