@@ -18,8 +18,11 @@ import {
   Brightness7,
 } from "@mui/icons-material";
 
+import { useDispatch, useSelector } from "react-redux";
+
 import { Sidebar, Search } from "..";
 import { fetchToken, createSessionId, moviesApi } from "../../utils";
+import { setUser, userSelector } from "../../features/auth";
 
 import useStyles from "./styles";
 
@@ -27,8 +30,9 @@ const Navbar = () => {
   const classes = useStyles();
   const isMobile = useMediaQuery("(max-width:600px)");
   const theme = useTheme();
-  const isAuthenticated = false;
   const [mobileOpen, setMobileOpen] = useState(false);
+  const dispatch = useDispatch();
+  const { isAuthenticated, user } = useSelector(userSelector);
 
   const token = localStorage.getItem("request_token");
   const sessionIdFromLocalStorage = localStorage.getItem("session_id");
