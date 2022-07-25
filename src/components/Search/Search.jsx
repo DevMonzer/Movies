@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 
 import useStyles from "./styles";
+import { searchMovie } from "../../features/currentGenreOrCategory";
 
 const Search = () => {
   const classes = useStyles();
