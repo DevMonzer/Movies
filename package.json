@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://devmonzer.github.io/movies",
   "dependencies": {
-    "@alan-ai/alan-sdk-web": "^1.8.28",
+    "@alan-ai/alan-sdk-web": "^1.8.34",
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
     "@mui/icons-material": "^5.0.3",
