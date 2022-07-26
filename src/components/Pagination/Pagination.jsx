@@ -18,6 +18,8 @@ const Pagination = ({ currentPage, setPage, totalPages }) => {
     }
   };
 
+  if (totalPages === 0) return null;
+
   return <div>Pagination</div>;
 };
 
