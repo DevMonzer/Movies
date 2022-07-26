@@ -3,7 +3,7 @@ import alanBtn from "@alan-ai/alan-sdk-web";
 
 import { ColorModeContext } from "../utils/ToggleColorMode";
 
-const Alan = () => {
+const useAlan = () => {
   const { setMode } = useContext(ColorModeContext);
 
   useEffect(() => {
@@ -20,8 +20,6 @@ const Alan = () => {
       },
     });
   }, []);
-
-  return <div>Alan</div>;
 };
 
-export default Alan;
+export default useAlan;
