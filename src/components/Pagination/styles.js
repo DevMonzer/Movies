@@ -5,4 +5,7 @@ export default makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
   },
+  button: {
+    margin: "30px 2px",
+  },
 }));
