@@ -21,9 +21,9 @@ import genreIcons from "../../assets/genres";
 import useStyles from "./styles";
 
 const blueLogo =
-  "https://i.ibb.co/QD6HMvd/138faa461ff64660bae4bf45d8d84be9.png";
+  "https://i.ibb.co/RDkk1BD/c3a6191b62164134b37d41065bf1d824.png";
 const redLogo =
-  "https://i.ibb.co/wsjHZN1/138faa461ff64660bae4bf45d8d84be9-1.png";
+  "https://i.ibb.co/n14C8ZK/c3a6191b62164134b37d41065bf1d824-1.png";
 
 const categories = [
   { label: "Popular", value: "popular" },
