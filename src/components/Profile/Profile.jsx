@@ -44,13 +44,17 @@ const Profile = () => {
         <Button color="inherit" onClick={logout}>
           Logout &nbsp; <ExitToApp />
         </Button>
+        {}
       </Box>
-      {!favoriteMovies.length ? (
+      {!favoriteMovies?.results?.length && !watchlistMovies?.results?.length ? (
         <Typography variant="h5">
           Add favorites or watchlist some movies to see here!
         </Typography>
       ) : (
-        <Box>Favorite Movies</Box>
+        <Box>
+          <RatedCards title="Favorite Movies" data={favoriteMovies} />
+          <RatedCards title="Watchlist Movies" data={watchlistMovies} />
+        </Box>
       )}
     </Box>
   );
