@@ -15,6 +15,14 @@ const Actors = () => {
   const [page, setPage] = useState(1);
   const { data, isFetching, error } = useGetActorDetailQuery(id);
 
+  if (isFetching || isActorsMovieFetching) {
+    return (
+      <Box display="flex" justifyContent="center" alignItems="center">
+        <CircularProgress size="8rem" />
+      </Box>
+    );
+  }
+
   return <div>Actors</div>;
 };
 
