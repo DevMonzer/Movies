@@ -12,9 +12,9 @@ const useAlan = () => {
       onCommand: ({ command, mode }) => {
         if (command === "changeMode") {
           if (mode === "light") {
-            setMode("dark");
-          } else if (mode === "dark") {
             setMode("light");
+          } else {
+            setMode("dark");
           }
         }
       },
