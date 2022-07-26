@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { CssBaseline } from "@mui/material";
 import { Route, Switch } from "react-router-dom";
 
@@ -9,6 +9,7 @@ import useAlan from "./Alan";
 
 const App = () => {
   const classes = useStyles();
+  const alanButoonContainer = useRef();
 
   useAlan();
 
@@ -33,6 +34,7 @@ const App = () => {
           </Route>
         </Switch>
       </main>
+      <div ref={alanButoonContainer} />
     </div>
   );
 };
