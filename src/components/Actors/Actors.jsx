@@ -92,6 +92,11 @@ const Actors = () => {
           <Typography variant="h2" align="center" gutterBottom>
             Movies
           </Typography>
+          {actorMovies ? (
+            <MovieList movies={actorMovies} numberOfMovies={12} />
+          ) : (
+            <Box>Sorry, nothing is found.</Box>
+          )}
         </Box>
       </Grid>
     </>
