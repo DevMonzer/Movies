@@ -23,6 +23,20 @@ const Actors = () => {
     );
   }
 
+  if (error) {
+    return (
+      <Box display="flex" justifyContent="center" alignItems="center">
+        <Button
+          startIcon={<ArrowBack />}
+          onClick={() => history.goBack()}
+          color="primary"
+        >
+          Go Back
+        </Button>
+      </Box>
+    );
+  }
+
   return <div>Actors</div>;
 };
 
