@@ -23,6 +23,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Sidebar, Search } from "..";
 import { fetchToken, createSessionId, moviesApi } from "../../utils";
 import { setUser, userSelector } from "../../features/auth";
+import { ColorModeContext } from "../../utils/ToggleColorMode";
 
 import useStyles from "./styles";
 
@@ -33,6 +34,8 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const dispatch = useDispatch();
   const { isAuthenticated, user } = useSelector(userSelector);
+
+  const colorMode = useContext(ColorModeContext);
 
   const token = localStorage.getItem("request_token");
   const sessionIdFromLocalStorage = localStorage.getItem("session_id");
@@ -72,7 +75,11 @@ const Navbar = () => {
               <Menu />
             </IconButton>
           )}
-          <IconButton color="inherit" sx={{ ml: 1 }} onClick={() => {}}>
+          <IconButton
+            color="inherit"
+            sx={{ ml: 1 }}
+            onClick={colorMode.toggleColorMode}
+          >
             {theme.palette.mode === "dark" ? <Brightness4 /> : <Brightness7 />}
           </IconButton>
           {!isMobile && <Search />}
