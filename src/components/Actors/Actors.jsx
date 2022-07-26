@@ -88,22 +88,22 @@ const Actors = () => {
             </Button>
           </Box>
         </Grid>
-        <Box margin="2rem" width="100%">
-          <Typography variant="h2" align="center" gutterBottom>
-            Movies
-          </Typography>
-          {actorMovies ? (
-            <MovieList movies={actorMovies} />
-          ) : (
-            <Box>Sorry, nothing is found.</Box>
-          )}
-          <Pagination
-            currentPage={page}
-            setPage={setPage}
-            totalPages={actorMovies?.total_pages}
-          />
-        </Box>
       </Grid>
+      <Box margin="2rem" width="100%">
+        <Typography variant="h2" align="center" gutterBottom>
+          Movies
+        </Typography>
+        {actorMovies ? (
+          <MovieList movies={actorMovies} numberOfMovies={12} />
+        ) : (
+          <Box>Sorry, nothing is found.</Box>
+        )}
+        <Pagination
+          currentPage={page}
+          setPage={setPage}
+          totalPages={actorMovies?.total_pages}
+        />
+      </Box>
     </>
   );
 };
