@@ -58,9 +58,13 @@ const Sidebar = ({ setMobileOpen }) => {
               onClick={() => dispatch(selectGenreOrCategory(value))}
               button
             >
-              {/* <ListItemIcon>
-                <img src={redLogo} className={classes.genreImage} height={30} />
-              </ListItemIcon> */}
+              <ListItemIcon>
+                <img
+                  src={genreIcons[label.toLowerCase()]}
+                  className={classes.genreImage}
+                  height={30}
+                />
+              </ListItemIcon>
               <ListItemText primary={label} />
             </ListItem>
           </Link>
