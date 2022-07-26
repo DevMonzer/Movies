@@ -20,7 +20,31 @@ const Pagination = ({ currentPage, setPage, totalPages }) => {
 
   if (totalPages === 0) return null;
 
-  return <div>Pagination</div>;
+  return (
+    <div className={classes.container}>
+      <Button
+        onClick={handlePrev}
+        className={classes.button}
+        variant="contained"
+        color="primary"
+        type="button"
+      >
+        Prev
+      </Button>
+      <Typography variant="h4" className={classes.pageNumber}>
+        {currentPage}
+      </Typography>
+      <Button
+        onClick={handleNext}
+        className={classes.button}
+        variant="contained"
+        color="primary"
+        type="button"
+      >
+        Next
+      </Button>
+    </div>
+  );
 };
 
 export default Pagination;
