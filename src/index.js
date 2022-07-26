@@ -11,8 +11,6 @@ import ToggleColorModeProvider from "./utils/ToggleColorMode";
 
 import "./index.css";
 
-const theme = createTheme({});
-
 ReactDOM.render(
   <Provider store={store}>
     <ToggleColorModeProvider>
