@@ -16,11 +16,9 @@ const theme = createTheme({});
 ReactDOM.render(
   <Provider store={store}>
     <ToggleColorModeProvider>
-      <ThemeProvider theme={theme}>
-        <BrowserRouter basename="/movies">
-          <App />
-        </BrowserRouter>
-      </ThemeProvider>
+      <BrowserRouter basename="/movies">
+        <App />
+      </BrowserRouter>
     </ToggleColorModeProvider>
   </Provider>,
 
