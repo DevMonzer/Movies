@@ -1,7 +1,4 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
-import { useTheme } from "@mui/material/styles";
-
 import {
   AppBar,
   Button,
@@ -17,29 +14,31 @@ import {
   Brightness4,
   Brightness7,
 } from "@mui/icons-material";
-
+import { Link } from "react-router-dom";
+import { useTheme } from "@mui/material/styles";
 import { useDispatch, useSelector } from "react-redux";
 
+import useStyles from "./styles";
 import { Sidebar, Search } from "..";
 import { fetchToken, createSessionId, moviesApi } from "../../utils";
 import { setUser, userSelector } from "../../features/auth";
 import { ColorModeContext } from "../../utils/ToggleColorMode";
 
-import useStyles from "./styles";
-
 const Navbar = () => {
   const classes = useStyles();
   const isMobile = useMediaQuery("(max-width:600px)");
   const theme = useTheme();
+  // const isAuthenticated = false;
   const [mobileOpen, setMobileOpen] = useState(false);
   const dispatch = useDispatch();
   const { isAuthenticated, user } = useSelector(userSelector);
 
   const colorMode = useContext(ColorModeContext);
 
+  // console.log(user);
+
   const token = localStorage.getItem("request_token");
   const sessionIdFromLocalStorage = localStorage.getItem("session_id");
-
   useEffect(() => {
     const logInUser = async () => {
       if (token) {
@@ -61,7 +60,7 @@ const Navbar = () => {
   }, [token]);
 
   return (
-    <>
+    <div>
       <AppBar position="fixed">
         <Toolbar className={classes.toolbar}>
           {isMobile && (
@@ -99,8 +98,8 @@ const Navbar = () => {
                 {!isMobile && <>My Movies &nbsp;</>}
                 <Avatar
                   style={{ width: 30, height: 30 }}
-                  alt={`name`}
-                  src={`https://www.seekpng.com/ipng/u2q8y3o0e6q8q8y3_person-avatar-placeholder/`}
+                  alt={user.username}
+                  src={`https://www.themoviedb.org/t/p/w64_and_h64_face${user?.avatar?.tmdb?.avatar_path}`}
                 />
               </Button>
             )}
@@ -116,7 +115,6 @@ const Navbar = () => {
               anchor="right"
               open={mobileOpen}
               onClose={() => setMobileOpen((prevMobileOpen) => !prevMobileOpen)}
-              className={classes.drawerBackground}
               classes={{ paper: classes.drawerPaper }}
               ModalProps={{ keepMounted: true }}
             >
@@ -133,7 +131,7 @@ const Navbar = () => {
           )}
         </nav>
       </div>
-    </>
+    </div>
   );
 };
 
