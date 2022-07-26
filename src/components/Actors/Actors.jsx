@@ -10,6 +10,11 @@ import {
 } from "../../services/TMDB";
 
 const Actors = () => {
+  const classes = useStyles();
+  const { id } = useParams();
+  const [page, setPage] = useState(1);
+  const { data, isFetching, error } = useGetActorDetailQuery(id);
+
   return <div>Actors</div>;
 };
 
