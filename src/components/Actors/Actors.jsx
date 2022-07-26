@@ -94,7 +94,7 @@ const Actors = () => {
           Movies
         </Typography>
         {actorMovies ? (
-          <MovieList movies={actorMovies} />
+          <MovieList movies={actorMovies} numberOfMovies={12} />
         ) : (
           <Box>Sorry, nothing is found.</Box>
         )}
