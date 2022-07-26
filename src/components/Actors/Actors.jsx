@@ -88,6 +88,11 @@ const Actors = () => {
             </Button>
           </Box>
         </Grid>
+        <Box margin="2rem" width="100%">
+          <Typography variant="h2" align="center" gutterBottom>
+            Movies
+          </Typography>
+        </Box>
       </Grid>
     </>
   );
