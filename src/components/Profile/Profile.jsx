@@ -15,21 +15,26 @@ const Profile = () => {
     sessionId: localStorage.getItem("session_id"),
     page: 1,
   });
+
   const { data: watchlistMovies, refetch: refetchWatchList } = useGetListQuery({
     listName: "watchlist/movies",
     accountId: user.id,
     sessionId: localStorage.getItem("session_id"),
     page: 1,
   });
-  const { user } = useSelector(userSelector);
+
+  useEffect(() => {
+    refetchFavorites();
+    refetchWatchList();
+  }, []);
 
   const logout = () => {
     localStorage.clear();
     window.location.href = "/filmpire";
   };
 
-  const favoriteMovies = [];
-
+  // console.log("favorite", favoriteMovies);
+  // console.log("watchlist", watchlistMovies);
   return (
     <Box>
       <Box display="flex" justifyContent="space-between">
