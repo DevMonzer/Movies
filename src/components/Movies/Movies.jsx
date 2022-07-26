@@ -8,7 +8,6 @@ import {
 import { useSelector } from "react-redux";
 
 import { useGetMoviesQuery } from "../../services/TMDB";
-
 import { MovieList, Pagination } from "..";
 
 const Movies = () => {
@@ -21,9 +20,10 @@ const Movies = () => {
     page,
     searchQuery,
   });
-
   const lg = useMediaQuery((theme) => theme.breakpoints.only("lg"));
   const numberOfMovies = lg ? 17 : 19;
+
+  // console.log(genreIdOrCategoryName);
 
   if (isFetching) {
     return (
