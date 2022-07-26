@@ -24,17 +24,16 @@ import { Link, useParams, userParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 
-import { MovieList } from "..";
-
-import { userSelector } from "../../features/auth";
-import { selectGenreOrCategory } from "../../features/currentGenreOrCategory";
 import {
   useGetMovieQuery,
   useGetRecommendationsQuery,
   useGetListQuery,
 } from "../../services/TMDB";
-import genreIcons from "../../assets/genres";
 import useStyles from "./styles";
+import genreIcons from "../../assets/genres";
+import { selectGenreOrCategory } from "../../features/currentGenreOrCategory";
+import { MovieList } from "..";
+import { userSelector } from "../../features/auth";
 
 const MovieInformation = () => {
   const classes = useStyles();
@@ -43,16 +42,67 @@ const MovieInformation = () => {
   const { data, isFetching, error } = useGetMovieQuery(id);
   const { data: recommendations, isFetching: isRecommendationsFetching } =
     useGetRecommendationsQuery({ list: "/recommendations", movie_id: id });
-
+  const { data: favoriteMovies } = useGetListQuery({
+    listName: "favorite/movies",
+    accountId: user.id,
+    sessionId: localStorage.getItem("session_id"),
+    page: 1,
+  });
+  const { data: watchlistMovies } = useGetListQuery({
+    listName: "watchlist/movies",
+    accountId: user.id,
+    sessionId: localStorage.getItem("session_id"),
+    page: 1,
+  });
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
 
-  const isMovieFavorited = false;
+  const [isMovieFavorited, setIsMovieFavorited] = useState(false);
+  const [isMovieWatchlisted, setIsMovieWatchlisted] = useState(false);
+  // const isMovieFavorited = true;
+  // const isMovieWatchlisted = true;
 
-  const addToFavorites = async () => {};
-  const addToWatchlist = async () => {};
+  useEffect(() => {
+    setIsMovieFavorited(
+      !!favoriteMovies?.results?.find((movie) => movie?.id === data?.id)
+    );
+  }, [favoriteMovies, data]);
 
-  if (isFetching) {
+  useEffect(() => {
+    setIsMovieWatchlisted(
+      !!watchlistMovies?.results?.find((movie) => movie?.id === data?.id)
+    );
+  }, [watchlistMovies, data]);
+
+  const addToFavorites = async () => {
+    await axios.post(
+      `https://api.themoviedb.org/3/account/${user.id}/favorite?api_key=${
+        process.env.REACT_APP_TMDB_KEY
+      }&session_id=${localStorage.getItem("session_id")}`,
+      {
+        media_type: "movie",
+        media_id: id,
+        favorite: !isMovieFavorited,
+      }
+    );
+    setIsMovieFavorited((prev) => !prev);
+  };
+
+  const addToWatchlist = async () => {
+    await axios.post(
+      `https://api.themoviedb.org/3/account/${user.id}/watchlist?api_key=${
+        process.env.REACT_APP_TMDB_KEY
+      }&session_id=${localStorage.getItem("session_id")}`,
+      {
+        media_type: "movie",
+        media_id: id,
+        watchlist: !isMovieWatchlisted,
+      }
+    );
+    setIsMovieWatchlisted((prev) => !prev);
+  };
+
+  if (isFetching || isRecommendationsFetching) {
     return (
       <Box display="flex" justifyContent="center" alignItems="center">
         <CircularProgress size="8rem" />
@@ -67,6 +117,8 @@ const MovieInformation = () => {
       </Box>
     );
   }
+
+  // console.log(data);
 
   return (
     <Grid container className={classes.containerSpaceAround}>
@@ -97,7 +149,7 @@ const MovieInformation = () => {
               gutterBottom
               style={{ marginLeft: "10px" }}
             >
-              {(data?.vote_average).toFixed(1)}/10
+              {data?.vote_average}/10{" "}
             </Typography>
           </Box>
           <Typography variant="h6" align="center" gutterBottom>
@@ -197,19 +249,17 @@ const MovieInformation = () => {
                 <Button
                   onClick={addToFavorites}
                   endIcon={
-                    isMovieFavorited ? <Favorite /> : <FavoriteBorderOutlined />
+                    isMovieFavorited ? <FavoriteBorderOutlined /> : <Favorite />
                   }
                 >
-                  {isMovieFavorited ? "Favorite" : "Unfavorite"}
+                  {isMovieFavorited ? "Unfavorite" : "Favorite"}
                 </Button>
                 <Button
                   onClick={addToWatchlist}
-                  // endIcon={isMovieWatchlisted ? <Remove /> : <PlusOne />}
+                  endIcon={isMovieWatchlisted ? <Remove /> : <PlusOne />}
                 >
-                  Watchlist
-                  {/* {isMovieWatchlisted ? "Remove" : "Watchlist"} */}
+                  {isMovieWatchlisted ? "Remove" : "Watchlist"}
                 </Button>
-
                 <Button
                   endIcon={<ArrowBack />}
                   sx={{ borderColor: "primary.main" }}
@@ -239,6 +289,7 @@ const MovieInformation = () => {
           <Box>Sorry, nothing is found.</Box>
         )}
       </Box>
+      {/* {console.log(data.videos.results[0].key)} */}
       <Modal
         closeAfterTransition
         className={classes.modal}
