@@ -97,6 +97,11 @@ const Actors = () => {
           ) : (
             <Box>Sorry, nothing is found.</Box>
           )}
+          <Pagination
+            currentPage={page}
+            setPage={setPage}
+            totalPages={actorMovies?.total_pages}
+          />
         </Box>
       </Grid>
     </>
