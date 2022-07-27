@@ -32,6 +32,8 @@ const useAlan = () => {
             const category = generOrCategory.startWith("top")
               ? "top_rated"
               : generOrCategory;
+            history.push("/");
+            dispatch(selectGenreOrCategory(category));
           }
         } else if (command == "changeMode") {
           if (mode == "light") {
