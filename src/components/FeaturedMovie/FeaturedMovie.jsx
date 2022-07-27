@@ -16,7 +16,15 @@ const FeaturedMovie = ({ movie }) => {
 
   if (!movie) return null;
 
-  return <div>FeaturedMovie</div>;
+  return (
+    <Box
+      component={Link}
+      to={`/movie/${movie.id}`}
+      className={classes.featuredCardContainer}
+    >
+      Hey
+    </Box>
+  );
 };
 
 export default FeaturedMovie;
