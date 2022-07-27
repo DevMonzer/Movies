@@ -14,4 +14,7 @@ export default makeStyles((theme) => ({
     justifyContent: "flex-end",
     flexDirection: "column",
   },
+  cardRoot: {
+    position: "relative",
+  },
 }));
