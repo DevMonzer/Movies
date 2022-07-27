@@ -14,6 +14,8 @@ import useStyles from "./styles";
 const FeaturedMovie = ({ movie }) => {
   const classes = useStyles();
 
+  if (!movie) return null;
+
   return <div>FeaturedMovie</div>;
 };
 
