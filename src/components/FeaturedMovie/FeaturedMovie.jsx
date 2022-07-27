@@ -34,7 +34,11 @@ const FeaturedMovie = ({ movie }) => {
           <CardContent
             className={classes.cardContent}
             classes={{ root: classes.cardContentRoot }}
-          ></CardContent>
+          >
+            <Typography variant="h5" gutterBottom>
+              {movie.title}
+            </Typography>
+          </CardContent>
         </Box>
       </Card>
     </Box>
