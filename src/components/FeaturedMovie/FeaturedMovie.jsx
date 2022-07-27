@@ -16,6 +16,7 @@ const FeaturedMovie = ({ movie }) => {
 
   if (!movie) return null;
 
+  // console.log('movie',movie);
   return (
     <Box
       component={Link}
