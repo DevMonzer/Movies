@@ -17,4 +17,14 @@ export default makeStyles((theme) => ({
   cardRoot: {
     position: "relative",
   },
+
+  cardMedia: {
+    position: "absolute",
+    top: 0,
+    right: 0,
+    height: "100%",
+    width: "100%",
+    backgroundColor: "rgba(0,0,0,0.575)",
+    backgroundBlendMode: "darken",
+  },
 }));
