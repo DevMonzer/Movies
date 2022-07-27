@@ -1,6 +1,6 @@
 # Movies App 🎥
 
-Movies app watch live -> https://movies-zeta-five.vercel.app/
+Movies app watch live -> https://movies-show.vercel.app/
 
 <a href="https://ibb.co/t23x9WC"><img src="https://i.ibb.co/4SJYH5N/Capture.jpg" alt="Capture" border="0"></a>
 
