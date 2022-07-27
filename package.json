@@ -2,7 +2,6 @@
   "name": "movies",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://devmonzer.github.io/movies",
   "dependencies": {
     "@alan-ai/alan-sdk-web": "^1.8.34",
     "@emotion/react": "^11.4.1",
@@ -15,6 +14,7 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.22.0",
+    "gh-pages": "^4.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.5",
@@ -49,6 +49,11 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^4.0.0"
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-react-hooks": "^4.2.0"
   }
 }
