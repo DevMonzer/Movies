@@ -30,6 +30,12 @@ const FeaturedMovie = ({ movie }) => {
           title={movie.title}
           className={classes.cardMedia}
         />
+        <Box padding="20px">
+          <CardContent
+            className={classes.cardContent}
+            classes={{ root: classes.cardContentRoot }}
+          ></CardContent>
+        </Box>
       </Card>
     </Box>
   );
