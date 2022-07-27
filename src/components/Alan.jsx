@@ -38,7 +38,7 @@ const useAlan = () => {
           fetchToken();
         } else if (command === "logout") {
           localStorage.clear();
-          window.location.href = "/";
+          history.push("/");
         }
       },
     });
