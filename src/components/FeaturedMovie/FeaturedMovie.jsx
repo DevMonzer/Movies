@@ -22,7 +22,15 @@ const FeaturedMovie = ({ movie }) => {
       to={`/movie/${movie.id}`}
       className={classes.featuredCardContainer}
     >
-      Hey
+      <Card className={classes.card} classes={{ root: classes.cardRoot }}>
+        <CardMedia
+          media="picture"
+          alt={movie.title}
+          image={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
+          title={movie.title}
+          className={classes.cardMedia}
+        />
+      </Card>
     </Box>
   );
 };
