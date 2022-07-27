@@ -27,4 +27,11 @@ export default makeStyles((theme) => ({
     backgroundColor: "rgba(0,0,0,0.575)",
     backgroundBlendMode: "darken",
   },
+  cardContent: {
+    color: "#fff",
+    width: "40%",
+    [theme.breakpoints.down("sm")]: {
+      width: "100%",
+    },
+  },
 }));
