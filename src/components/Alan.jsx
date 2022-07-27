@@ -3,12 +3,17 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import alanBtn from "@alan-ai/alan-sdk-web";
 
+import {
+  selectGenreOrCategory,
+  searchMovie,
+} from "../features/currentGenreOrCategory";
 import { ColorModeContext } from "../utils/ToggleColorMode";
 import { fetchToken } from "../utils";
 
 const useAlan = () => {
   const { setMode } = useContext(ColorModeContext);
   const dispatch = useDispatch();
+  const history = useHistory();
 
   useEffect(() => {
     alanBtn({
