@@ -15,7 +15,6 @@ const Profile = () => {
     sessionId: localStorage.getItem("session_id"),
     page: 1,
   });
-
   const { data: watchlistMovies, refetch: refetchWatchList } = useGetListQuery({
     listName: "watchlist/movies",
     accountId: user.id,
