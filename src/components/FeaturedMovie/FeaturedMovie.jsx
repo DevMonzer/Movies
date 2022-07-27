@@ -38,6 +38,16 @@ const FeaturedMovie = ({ movie }) => {
             <Typography variant="h5" gutterBottom>
               {movie.title}
             </Typography>
+            <Box display="flex" align="center">
+              <Rating readOnly value={movie.vote_average / 2}></Rating>
+              <Typography
+                variant="subtitle1"
+                gutterBottom
+                style={{ marginLeft: "10px" }}
+              >
+                {movie?.vote_average}/10{" "}
+              </Typography>
+            </Box>
           </CardContent>
         </Box>
       </Card>
