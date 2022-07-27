@@ -8,12 +8,14 @@ export default makeStyles((theme) => ({
     height: "490px",
     textDecoration: "none",
   },
+
   card: {
     width: "100%",
     display: "flex",
     justifyContent: "flex-end",
     flexDirection: "column",
   },
+
   cardRoot: {
     position: "relative",
   },
@@ -27,11 +29,17 @@ export default makeStyles((theme) => ({
     backgroundColor: "rgba(0,0,0,0.575)",
     backgroundBlendMode: "darken",
   },
+
   cardContent: {
     color: "#fff",
     width: "40%",
     [theme.breakpoints.down("sm")]: {
       width: "100%",
     },
+  },
+
+  cardContentRoot: {
+    position: "relative",
+    backgroundColor: "transparent",
   },
 }));
