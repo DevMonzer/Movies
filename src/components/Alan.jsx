@@ -27,6 +27,11 @@ const useAlan = () => {
           if (foundGenre) {
             history.push("/");
             dispatch(selectGenreOrCategory(foundGenre.id));
+          } else {
+            // top_rated | popular | upcoming
+            const category = generOrCategory.startWith("top")
+              ? "top_rated"
+              : generOrCategory;
           }
         } else if (command == "changeMode") {
           if (mode == "light") {
