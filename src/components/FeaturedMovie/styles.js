@@ -8,4 +8,10 @@ export default makeStyles((theme) => ({
     height: "490px",
     textDecoration: "none",
   },
+  card: {
+    width: "100%",
+    display: "flex",
+    justifyContent: "flex-end",
+    flexDirection: "column",
+  },
 }));
