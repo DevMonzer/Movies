@@ -21,7 +21,7 @@ const Movies = () => {
     searchQuery,
   });
   const lg = useMediaQuery((theme) => theme.breakpoints.only("lg"));
-  const numberOfMovies = lg ? 17 : 18;
+  const numberOfMovies = lg ? 17 : 19;
 
   // console.log(genreIdOrCategoryName);`
 
