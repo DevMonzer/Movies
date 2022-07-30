@@ -18,6 +18,7 @@ https://www.themoviedb.org/documentation/api
 * Material UI
 * React js
 * Redux Toolkit
+* React Hooks
 * React Router
 * TMDB API
 * Alan App for voice AI
