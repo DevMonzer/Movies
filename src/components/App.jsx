@@ -14,28 +14,39 @@ const App = () => {
   useAlan();
 
   return (
-    <div className={classes.root}>
-      <CssBaseline />
-      <Navbar />
-      <main className={classes.content}>
-        <div className={classes.toolbar} />
-        <Switch>
-          <Route exact path={["/", "/approved"]}>
-            <Movies />
-          </Route>
-          <Route exact path="/movie/:id">
-            <MovieInformation />
-          </Route>
-          <Route exact path="/actor/:id">
-            <Actors />
-          </Route>
-          <Route exact path="/profile/:id">
-            <Profile />
-          </Route>
-        </Switch>
-      </main>
-      <div ref={alanButoonContainer} />
-    </div>
+    <>
+      <div className={classes.root}>
+        <CssBaseline />
+        <Navbar />
+        <main className={classes.content}>
+          <div className={classes.toolbar} />
+          <Switch>
+            <Route exact path={["/", "/approved"]}>
+              <Movies />
+            </Route>
+            <Route exact path="/movie/:id">
+              <MovieInformation />
+            </Route>
+            <Route exact path="/actor/:id">
+              <Actors />
+            </Route>
+            <Route exact path="/profile/:id">
+              <Profile />
+            </Route>
+          </Switch>
+        </main>
+        <div ref={alanButoonContainer} />
+      </div>
+      <div style={{ textAlign: "center", padding: "20px" }}>
+        All Rights Reserved &copy;{new Date().getFullYear()}
+        <a
+          style={{ textDecoration: "none" }}
+          href="https://dev-monzer.vercel.app/"
+        >
+          Monzer Mohammed
+        </a>
+      </div>
+    </>
   );
 };
 

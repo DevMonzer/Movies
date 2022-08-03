@@ -76,9 +76,11 @@ const MovieInformation = () => {
 
   const addToFavorites = async () => {
     await axios.post(
-      `https://api.themoviedb.org/3/account/${user.id}/favorite?api_key=${
-        process.env.REACT_APP_TMDB_KEY
-      }&session_id=${localStorage.getItem("session_id")}`,
+      `https://api.themoviedb.org/3/account/${
+        user.id
+      }/favorite?api_key=${"83e503c339b79b35e59eb40deea54837"}&session_id=${localStorage.getItem(
+        "session_id"
+      )}`,
       {
         media_type: "movie",
         media_id: id,
@@ -90,9 +92,11 @@ const MovieInformation = () => {
 
   const addToWatchlist = async () => {
     await axios.post(
-      `https://api.themoviedb.org/3/account/${user.id}/watchlist?api_key=${
-        process.env.REACT_APP_TMDB_KEY
-      }&session_id=${localStorage.getItem("session_id")}`,
+      `https://api.themoviedb.org/3/account/${
+        user.id
+      }/watchlist?api_key=${"83e503c339b79b35e59eb40deea54837"}&session_id=${localStorage.getItem(
+        "session_id"
+      )}`,
       {
         media_type: "movie",
         media_id: id,
@@ -153,7 +157,7 @@ const MovieInformation = () => {
             </Typography>
           </Box>
           <Typography variant="h6" align="center" gutterBottom>
-            {data?.runtime} min | Language: {data?.spoken_languages[0].name}
+            {data?.runtime} min | Language: {data?.spoken_languages[0]?.name}
           </Typography>
         </Grid>
         <Grid item className={classes.genreContainer}>
@@ -246,20 +250,28 @@ const MovieInformation = () => {
             </Grid>
             <Grid item xs={12} sm={6} className={classes.buttonsContainer}>
               <ButtonGroup size="medium" variant="outlined">
-                <Button
-                  onClick={addToFavorites}
-                  endIcon={
-                    isMovieFavorited ? <FavoriteBorderOutlined /> : <Favorite />
-                  }
-                >
-                  {isMovieFavorited ? "Unfavorite" : "Favorite"}
-                </Button>
-                <Button
-                  onClick={addToWatchlist}
-                  endIcon={isMovieWatchlisted ? <Remove /> : <PlusOne />}
-                >
-                  {isMovieWatchlisted ? "Remove" : "Watchlist"}
-                </Button>
+                {user.id ? (
+                  <Button
+                    onClick={addToFavorites}
+                    endIcon={
+                      isMovieFavorited ? (
+                        <FavoriteBorderOutlined />
+                      ) : (
+                        <Favorite />
+                      )
+                    }
+                  >
+                    {isMovieFavorited ? "Unfavorite" : "Favorite"}
+                  </Button>
+                ) : null}
+                {user.id ? (
+                  <Button
+                    onClick={addToWatchlist}
+                    endIcon={isMovieWatchlisted ? <Remove /> : <PlusOne />}
+                  >
+                    {isMovieWatchlisted ? "Remove" : "Watchlist"}
+                  </Button>
+                ) : null}
                 <Button
                   endIcon={<ArrowBack />}
                   sx={{ borderColor: "primary.main" }}

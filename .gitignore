@@ -10,6 +10,7 @@ features
 services
 utils
 alan.jsx
+AlanConfigFile.js
 
 # testing
 /coverage
@@ -28,5 +29,7 @@ alan.jsx
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+.vercel
 
 .vercel
