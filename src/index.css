@@ -1,3 +1,4 @@
+/* Minimize the scrollbar size */
 ::-webkit-scrollbar {
   width: 7px;
 }
@@ -11,5 +12,5 @@
 }
 
 * {
-  text-decoration: 'none';
+  text-decoration: "none";
 }

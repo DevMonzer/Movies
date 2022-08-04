@@ -43,3 +43,10 @@ export default makeStyles((theme) => ({
     backgroundColor: "transparent",
   },
 }));
+
+/*
+
+      The theme prop is used to specific styles based on certin breakpoints 
+          [theme.breakpoints.down("sm")]: -> means apply style for small screens ( < small screens) meaning for extra small screens
+
+*/

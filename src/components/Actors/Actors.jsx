@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { Box, Button, CircularProgress, Grid, Typography } from "@mui/material";
 import { useHistory, useParams } from "react-router-dom";
 import { ArrowBack } from "@mui/icons-material";
-
+// This is used to add js styles
 import useStyles from "./styles";
+// Getting the actor details (useGetActorDetailQuery) containing their movies list (useGetMoviesByActorIdQuery)
 import {
   useGetActorDetailQuery,
   useGetMoviesByActorIdQuery,
@@ -11,14 +12,19 @@ import {
 import { MovieList, Pagination } from "..";
 
 const Actors = () => {
+  // Is used to apply js styles
   const classes = useStyles();
+  // Getting the actorId from the URL or the request
   const { id } = useParams();
   const [page, setPage] = useState(1);
+  // (data, isFetching, error) are all bulit in the redux toolkit, data contains the actor details data
   const { data, isFetching, error } = useGetActorDetailQuery(id);
+  // (data, isFetching, error) are all bulit in the redux toolkit, data contains the actor movies list data
   const { data: actorMovies, isFetching: isActorsMovieFetching } =
     useGetMoviesByActorIdQuery({ id, page });
   const history = useHistory();
 
+  // Showing a spinner while the actor data is being loaded
   if (isFetching || isActorsMovieFetching) {
     return (
       <Box display="flex" justifyContent="center" alignItems="center">
@@ -27,6 +33,7 @@ const Actors = () => {
     );
   }
 
+  // Showing an error message when there's no fetched data
   if (error) {
     return (
       <Box display="flex" justifyContent="center" alignItems="center">
@@ -109,3 +116,10 @@ const Actors = () => {
 };
 
 export default Actors;
+
+/*
+
+    When fetching data from an API it's better to check every single field before  we display it cuz if it's not existed it'll cuz errors
+        examples: {data?.name} -  {data?.biography || "Sorry, no biography yet..."}
+
+*/

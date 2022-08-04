@@ -35,3 +35,10 @@ export default makeStyles((theme) => ({
     textAlign: "center",
   },
 }));
+
+/*
+
+      The theme prop is used to specific styles based on certin breakpoints 
+          [theme.breakpoints.up("xs")]: -> means apply style for large screens ( > extra small screens) meaning apply the styles for all screens exept the extra small one 
+
+*/

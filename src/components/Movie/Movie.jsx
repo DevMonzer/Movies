@@ -2,9 +2,11 @@ import React from "react";
 import { Typography, Grid, Grow, Tooltip, Rating } from "@mui/material";
 import { Link } from "react-router-dom";
 
+// This is used to add js styles
 import useStyles from "./styles";
 
 const Movie = ({ movie, i }) => {
+  // Is used to apply js styles
   const classes = useStyles();
 
   return (
@@ -17,7 +19,7 @@ const Movie = ({ movie, i }) => {
             src={
               movie.poster_path
                 ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
-                : "https://fillmurray.com/200/300"
+                : "https://i.ibb.co/vQk5jwm/sorry.jpg"
             }
           />
           <Typography className={classes.title} variant="h5">
@@ -35,3 +37,9 @@ const Movie = ({ movie, i }) => {
 };
 
 export default Movie;
+
+/*
+
+      If we have no poster for the movie, then we show a default image
+
+*/

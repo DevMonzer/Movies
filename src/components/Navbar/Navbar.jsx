@@ -28,17 +28,16 @@ const Navbar = () => {
   const classes = useStyles();
   const isMobile = useMediaQuery("(max-width:600px)");
   const theme = useTheme();
-  // const isAuthenticated = false;
   const [mobileOpen, setMobileOpen] = useState(false);
+
   const dispatch = useDispatch();
   const { isAuthenticated, user } = useSelector(userSelector);
 
   const colorMode = useContext(ColorModeContext);
 
-  // console.log(user);
-
   const token = localStorage.getItem("request_token");
   const sessionIdFromLocalStorage = localStorage.getItem("session_id");
+
   useEffect(() => {
     const logInUser = async () => {
       if (token) {
@@ -95,7 +94,9 @@ const Navbar = () => {
                 className={classes.linkButton}
                 onClick={() => {}}
               >
-                {!isMobile && <>My Movies &nbsp;</>}
+                {!isMobile && (
+                  <>{user.username ? user.username : "My Movies"} &nbsp;</>
+                )}
                 <Avatar
                   style={{ width: 30, height: 30 }}
                   alt={user.username}
@@ -118,7 +119,7 @@ const Navbar = () => {
               classes={{ paper: classes.drawerPaper }}
               ModalProps={{ keepMounted: true }}
             >
-              <Sidebar setMobileOpen={setMobileOpen} />
+              <Sidebar mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />
             </Drawer>
           ) : (
             <Drawer
@@ -126,7 +127,7 @@ const Navbar = () => {
               open
               classes={{ paper: classes.drawerPaper }}
             >
-              <Sidebar setMobileOpen={setMobileOpen} />
+              <Sidebar />
             </Drawer>
           )}
         </nav>
