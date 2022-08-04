@@ -6,11 +6,11 @@
 .pnp.js
 
 # folders & files 
-# features
-# services
-# utils
-# alan.jsx
-# AlanConfigFile.js
+features
+services
+utils
+alan.jsx
+AlanConfigFile.js
 
 # testing
 /coverage
