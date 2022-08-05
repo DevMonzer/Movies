@@ -5,6 +5,7 @@ import { Route, Switch } from "react-router-dom";
 import useStyles from "./styles";
 import { Actors, MovieInformation, Movies, Navbar, Profile } from ".";
 
+// The  AI vocie assistant
 import useAlan from "./Alan";
 
 const App = () => {
