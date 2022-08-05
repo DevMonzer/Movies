@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
-import { createTheme, ThemeProvider } from "@mui/material";
 import { Provider } from "react-redux";
 
 import App from "./components/App";
@@ -22,3 +21,11 @@ ReactDOM.render(
 
   document.getElementById("root")
 );
+
+/*
+
+    ToggleColorModeProvider is used to togle the website color mode based on the user settings
+
+    <BrowserRouter basename="/movies"> means that the home route is /movies
+
+*/

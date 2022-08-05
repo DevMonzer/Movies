@@ -9,11 +9,13 @@ import {
 } from "@mui/material";
 import { Link } from "react-router-dom";
 
+// This is used to add js styles
 import useStyles from "./styles";
 
 const FeaturedMovie = ({ movie }) => {
+  // Is used to apply js styles
   const classes = useStyles();
-
+  // If we have no movie to display we return nothing
   if (!movie) return null;
 
   // console.log('movie',movie);

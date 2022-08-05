@@ -2,9 +2,11 @@ import React from "react";
 import { Typography, Grid, Grow, Tooltip, Rating } from "@mui/material";
 import { Link } from "react-router-dom";
 
+// This is used to add js styles
 import useStyles from "./styles";
 
 const Movie = ({ movie, i }) => {
+  // Is used to apply js styles
   const classes = useStyles();
 
   return (
@@ -35,3 +37,9 @@ const Movie = ({ movie, i }) => {
 };
 
 export default Movie;
+
+/*
+
+      If we have no poster for the movie, then we show a default image
+
+*/

@@ -23,7 +23,7 @@ import {
 import { Link, useParams, userParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
-
+// Getting favorite/watchlist movies
 import {
   useGetMovieQuery,
   useGetRecommendationsQuery,

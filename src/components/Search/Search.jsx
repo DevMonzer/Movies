@@ -21,6 +21,7 @@ const Search = () => {
         query.toLowerCase().startsWith("por")
       )
         return;
+
       dispatch(searchMovie(query));
     }
   };
