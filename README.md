@@ -17,8 +17,8 @@ Movies app watch live -> https://movies-show.vercel.app/
 4. Run `npm start`
 
 ## The API You Should Use 
-<a href="https://https://developers.themoviedb.org/3" target="_blank">TMDB_API</a>
-   
+https://developers.themoviedb.org/3/
+
 ## Technologies ⚙️   
  
 * Material UI
