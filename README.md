@@ -33,10 +33,15 @@ https://developers.themoviedb.org/3
 * TMDB API
 * Alan App for voice AI
 
-## More Images:
+## Movies App Images:
 
 <a href="https://ibb.co/qpqHhxL"><img src="https://i.ibb.co/FzZQcnk/Capture.jpg" alt="Capture" border="0"></a>
 ##
 <a href="https://ibb.co/gvXwLxq"><img src="https://i.ibb.co/7gTVdqM/Capture1.jpg" alt="Capture1" border="0"></a>
 ##
 <a href="https://ibb.co/0XPrCV5"><img src="https://i.ibb.co/PYBgczk/Capture2.jpg" alt="Capture2" border="0"></a>
+##
+## Movies App Images:
+<a href="https://ibb.co/XsZyy46"><img src="https://i.ibb.co/SnXQQxH/Capture1.jpg" alt="Capture1" border="0"></a>
+##
+<a href="https://ibb.co/nz1SP4H"><img src="https://i.ibb.co/r4pJdqC/Capture2.jpg" alt="Capture2" border="0"></a>
