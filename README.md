@@ -8,9 +8,11 @@ Alan works as in-app voice assistant which create conversational experiences for
 
 Movies app watch live -> https://movies-show.vercel.app/
 
+<a href="https://ibb.co/t23x9WC"><img src="https://i.ibb.co/4SJYH5N/Capture.jpg" alt="Capture" border="0"></a>
+
 Series app watch live -> https://series-devmonzer.vercel.app/
 
-<a href="https://ibb.co/t23x9WC"><img src="https://i.ibb.co/4SJYH5N/Capture.jpg" alt="Capture" border="0"></a>
+<a href="https://ibb.co/6PQTgWc"><img src="https://i.ibb.co/9TP1srm/Capture.jpg" alt="Capture" border="0"></a>
 
 ## What to do  
 1. Clone this repo     
