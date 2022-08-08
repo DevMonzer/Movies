@@ -5,7 +5,7 @@ Movies combines the desire to unleash powerful creativity with the industry's mo
 This application includes user authentication, dark mode, sort movie on the basis of categories or genres, viewing movie and actor details, adding a movie to favorites or watchlist and many more functionalities.
 
 Alan works as in-app voice assistant which create conversational experiences for Movies.
- 
+  
 Movies app watch live -> https://movies-show.vercel.app/
 
 <a href="https://ibb.co/t23x9WC"><img src="https://i.ibb.co/4SJYH5N/Capture.jpg" alt="Capture" border="0"></a>
