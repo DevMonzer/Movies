@@ -31,7 +31,7 @@ https://developers.themoviedb.org/3
 * React Hooks
 * React Router
 * TMDB API
-* Alan App for voice AI
+* Alan App for AI voice assistant 
 
 ## Movies App More Images:
 
