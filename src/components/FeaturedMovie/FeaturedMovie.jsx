@@ -16,13 +16,13 @@ const FeaturedMovie = ({ movie }) => {
   // Is used to apply js styles
   const classes = useStyles();
   // If we have no movie to display we return nothing
-  // if (!movie) return null;
+  if (!movie) return null;
 
   // console.log('movie',movie);
   return (
     <Box
       component={Link}
-      to={`/movie/${movie.id}`}
+      // to={`/movie/${movie.id}`}
       className={classes.featuredCardContainer}
     >
       <Card className={classes.card} classes={{ root: classes.cardRoot }}>
