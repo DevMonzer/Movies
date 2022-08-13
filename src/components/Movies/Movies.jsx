@@ -45,7 +45,7 @@ const Movies = () => {
     );
   }
 
-  // if (error) return "An error has occured.";
+  if (error) return "An error has occured.";
 
   return (
     <div>
