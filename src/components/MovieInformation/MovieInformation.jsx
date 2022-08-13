@@ -59,8 +59,6 @@ const MovieInformation = () => {
 
   const [isMovieFavorited, setIsMovieFavorited] = useState(false);
   const [isMovieWatchlisted, setIsMovieWatchlisted] = useState(false);
-  // const isMovieFavorited = true;
-  // const isMovieWatchlisted = true;
 
   useEffect(() => {
     setIsMovieFavorited(
@@ -78,7 +76,7 @@ const MovieInformation = () => {
     await axios.post(
       `https://api.themoviedb.org/3/account/${
         user.id
-      }/favorite?api_key=${"83e503c339b79b35e59eb40deea54837"}&session_id=${localStorage.getItem(
+      }/favorite?api_key=${"985e679d5a289c2b7f9cf40b14ce5c1f"}&session_id=${localStorage.getItem(
         "session_id"
       )}`,
       {
@@ -94,7 +92,7 @@ const MovieInformation = () => {
     await axios.post(
       `https://api.themoviedb.org/3/account/${
         user.id
-      }/watchlist?api_key=${"83e503c339b79b35e59eb40deea54837"}&session_id=${localStorage.getItem(
+      }/watchlist?api_key=${"985e679d5a289c2b7f9cf40b14ce5c1f"}&session_id=${localStorage.getItem(
         "session_id"
       )}`,
       {
