@@ -25,14 +25,6 @@ const Movies = () => {
 
   // console.log(genreIdOrCategoryName);`
 
-  if (isFetching) {
-    return (
-      <Box display="flex" justifyContent="center">
-        <CircularProgress size="4rem" />
-      </Box>
-    );
-  }
-
   if (!data.results.length) {
     return (
       <Box display="flex" alignItem="center" mt="20px">
