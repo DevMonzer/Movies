@@ -15,7 +15,7 @@ const Search = () => {
 
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
-      // console.log(query);
+      console.log(query);
       if (
         query.toLowerCase().startsWith("porn") ||
         query.toLowerCase().startsWith("por")
