@@ -6,11 +6,11 @@ import useStyles from "./styles";
 import { Actors, MovieInformation, Movies, Navbar, Profile } from ".";
 
 // The AI vocie assistant
-// import useAlan from "./Alan";
+import useAlan from "./Alan";
 
 const App = () => {
   const classes = useStyles();
-  // const alanButoonContainer = useRef();
+  const alanButoonContainer = useRef();
 
   useAlan();
 
@@ -35,7 +35,7 @@ const App = () => {
           </Route>
         </Switch>
       </main>
-      {/* <div ref={alanButoonContainer} /> */}
+      <div ref={alanButoonContainer} />
     </div>
   );
 };
