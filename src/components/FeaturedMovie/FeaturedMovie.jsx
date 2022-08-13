@@ -22,7 +22,7 @@ const FeaturedMovie = ({ movie }) => {
   return (
     <Box
       component={Link}
-      // to={`/movie/${movie.id}`}
+      to={`/movie/${movie.id}`}
       className={classes.featuredCardContainer}
     >
       <Card className={classes.card} classes={{ root: classes.cardRoot }}>
