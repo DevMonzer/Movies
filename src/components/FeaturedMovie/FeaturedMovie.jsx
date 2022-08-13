@@ -51,7 +51,7 @@ const FeaturedMovie = ({ movie }) => {
                 {movie?.vote_average}/10{" "}
               </Typography>
             </Box>
-            <Typography variant="body2">{movie.overview}</Typography>
+            {/* <Typography variant="body2">{movie.overview}</Typography> */}
           </CardContent>
         </Box>
       </Card>
