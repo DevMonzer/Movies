@@ -22,6 +22,7 @@ const Actors = () => {
   // (data, isFetching, error) are all bulit in the redux toolkit, data contains the actor movies list data
   const { data: actorMovies, isFetching: isActorsMovieFetching } =
     useGetMoviesByActorIdQuery({ id, page });
+  console.log(data);
   const history = useHistory();
 
   // Showing a spinner while the actor data is being loaded
@@ -73,6 +74,9 @@ const Actors = () => {
           </Typography>
           <Typography variant="h5" gutterBottom>
             Born: {new Date(data?.birthday).toDateString()}
+          </Typography>
+          <Typography variant="h5" gutterBottom>
+            popularity: {data?.place_of_birth}
           </Typography>
           <Typography variant="body1" align="justify" paragraph>
             {data?.biography || "Sorry, no biography yet..."}
