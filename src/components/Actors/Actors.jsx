@@ -22,7 +22,7 @@ const Actors = () => {
   // (data, isFetching, error) are all bulit in the redux toolkit, data contains the actor movies list data
   const { data: actorMovies, isFetching: isActorsMovieFetching } =
     useGetMoviesByActorIdQuery({ id, page });
-  console.log(data);
+  // console.log(data);
   const history = useHistory();
 
   // Showing a spinner while the actor data is being loaded
