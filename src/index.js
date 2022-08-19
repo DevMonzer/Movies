@@ -26,6 +26,5 @@ ReactDOM.render(
 
     ToggleColorModeProvider is used to togle the website color mode based on the user settings
 
-    <BrowserRouter basename="/movies"> means that the home route is /movies
 
 */
