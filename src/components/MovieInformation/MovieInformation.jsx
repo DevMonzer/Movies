@@ -35,6 +35,9 @@ import { selectGenreOrCategory } from "../../features/currentGenreOrCategory";
 import { MovieList } from "..";
 import { userSelector } from "../../features/auth";
 
+import AliceCarousel from "react-alice-carousel";
+import "react-alice-carousel/lib/alice-carousel.css";
+
 const MovieInformation = () => {
   const classes = useStyles();
   const { id } = useParams();
