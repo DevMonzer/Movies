@@ -17,6 +17,7 @@ const FeaturedMovie = ({ movie }) => {
   const classes = useStyles();
   // If we have no movie to display we return nothing
   if (!movie) return null;
+  console.log(movie);
 
   // console.log('movie',movie);
   return (
@@ -51,6 +52,9 @@ const FeaturedMovie = ({ movie }) => {
                 {movie?.vote_average}/10{" "}
               </Typography>
             </Box>
+            <Typography variant="subtitle1" gutterBottom>
+              Popularity: {movie.popularity}
+            </Typography>
             <Typography variant="body2">{movie.overview}</Typography>
           </CardContent>
         </Box>
