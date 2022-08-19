@@ -35,17 +35,6 @@ import { selectGenreOrCategory } from "../../features/currentGenreOrCategory";
 import { MovieList } from "..";
 import { userSelector } from "../../features/auth";
 
-import AliceCarousel from "react-alice-carousel";
-import "react-alice-carousel/lib/alice-carousel.css";
-
-const handleDragStart = (e) => e.preventDefault();
-
-const items = [
-  <img src="path-to-img" onDragStart={handleDragStart} role="presentation" />,
-  <img src="path-to-img" onDragStart={handleDragStart} role="presentation" />,
-  <img src="path-to-img" onDragStart={handleDragStart} role="presentation" />,
-];
-
 const MovieInformation = () => {
   const classes = useStyles();
   const { id } = useParams();
@@ -53,6 +42,7 @@ const MovieInformation = () => {
   const { data, isFetching, error } = useGetMovieQuery(id);
   const { data: recommendations, isFetching: isRecommendationsFetching } =
     useGetRecommendationsQuery({ list: "/recommendations", movie_id: id });
+  // console.log(data);
   const { data: favoriteMovies } = useGetListQuery({
     listName: "favorite/movies",
     accountId: user.id,
@@ -198,35 +188,40 @@ const MovieInformation = () => {
           Top Cast
         </Typography>
         <Grid item container spacing={2}>
-          {data &&
-            data.credits.cast
-              .map(
-                (character, i) =>
-                  character.profile_path && (
-                    <Grid
-                      key={i}
-                      item
-                      xs={4}
-                      md={2}
-                      component={Link}
-                      to={`/actor/${character.id}`}
-                      style={{ textDecoration: "none" }}
-                    >
-                      <img
-                        className={classes.castImage}
-                        src={`https://image.tmdb.org/t/p/w500/${character.profile_path}`}
-                        alt={character.name}
-                      />
-                      <Typography color="textPrimary">
-                        {character.name}
-                      </Typography>
-                      <Typography color="textSecondary">
-                        {character.character.split("/")[0]}
-                      </Typography>
-                    </Grid>
-                  )
-              )
-              .slice(0, 6)}
+          {
+            data && (
+              // data.credits.cast
+              <AliceCarousel mouseTracking items={items} />
+            )
+
+            // .map(
+            //   (character, i) =>
+            //     character.profile_path && (
+            //       <Grid
+            //         key={i}
+            //         item
+            //         xs={4}
+            //         md={2}
+            //         component={Link}
+            //         to={`/actor/${character.id}`}
+            //         style={{ textDecoration: "none" }}
+            //       >
+            //         <img
+            //           className={classes.castImage}
+            //           src={`https://image.tmdb.org/t/p/w500/${character.profile_path}`}
+            //           alt={character.name}
+            //         />
+            //         <Typography color="textPrimary">
+            //           {character.name}
+            //         </Typography>
+            //         <Typography color="textSecondary">
+            //           {character.character.split("/")[0]}
+            //         </Typography>
+            //       </Grid>
+            //     )
+            // )
+            // .slice(0, 6)
+          }
         </Grid>
         <Grid item container style={{ marginTop: "2rem" }}>
           <div className={classes.buttonsContainer}>
