@@ -188,40 +188,35 @@ const MovieInformation = () => {
           Top Cast
         </Typography>
         <Grid item container spacing={2}>
-          {
-            data && (
-              // data.credits.cast
-              <AliceCarousel mouseTracking items={items} />
-            )
-
-            // .map(
-            //   (character, i) =>
-            //     character.profile_path && (
-            //       <Grid
-            //         key={i}
-            //         item
-            //         xs={4}
-            //         md={2}
-            //         component={Link}
-            //         to={`/actor/${character.id}`}
-            //         style={{ textDecoration: "none" }}
-            //       >
-            //         <img
-            //           className={classes.castImage}
-            //           src={`https://image.tmdb.org/t/p/w500/${character.profile_path}`}
-            //           alt={character.name}
-            //         />
-            //         <Typography color="textPrimary">
-            //           {character.name}
-            //         </Typography>
-            //         <Typography color="textSecondary">
-            //           {character.character.split("/")[0]}
-            //         </Typography>
-            //       </Grid>
-            //     )
-            // )
-            // .slice(0, 6)
-          }
+          {data &&
+            data.credits.cast
+              .map(
+                (character, i) =>
+                  character.profile_path && (
+                    <Grid
+                      key={i}
+                      item
+                      xs={4}
+                      md={2}
+                      component={Link}
+                      to={`/actor/${character.id}`}
+                      style={{ textDecoration: "none" }}
+                    >
+                      <img
+                        className={classes.castImage}
+                        src={`https://image.tmdb.org/t/p/w500/${character.profile_path}`}
+                        alt={character.name}
+                      />
+                      <Typography color="textPrimary">
+                        {character.name}
+                      </Typography>
+                      <Typography color="textSecondary">
+                        {character.character.split("/")[0]}
+                      </Typography>
+                    </Grid>
+                  )
+              )
+              .slice(0, 6)}
         </Grid>
         <Grid item container style={{ marginTop: "2rem" }}>
           <div className={classes.buttonsContainer}>
