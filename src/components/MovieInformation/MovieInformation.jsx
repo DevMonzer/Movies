@@ -8,6 +8,7 @@ import {
   Box,
   CircularProgress,
   Rating,
+  useMediaQuery,
 } from "@mui/material";
 import {
   Movie as MovieIcon,
@@ -19,7 +20,7 @@ import {
   Remove,
   ArrowBack,
 } from "@mui/icons-material";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, userParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 // Getting favorite/watchlist movies
@@ -39,6 +40,7 @@ const MovieInformation = () => {
   const { id } = useParams();
   const { user } = useSelector(userSelector);
   const { data, isFetching, error } = useGetMovieQuery(id);
+  // console.log(user.id);
   const { data: recommendations, isFetching: isRecommendationsFetching } =
     useGetRecommendationsQuery({ list: "/recommendations", movie_id: id });
   const { data: favoriteMovies } = useGetListQuery({
@@ -53,6 +55,8 @@ const MovieInformation = () => {
     sessionId: localStorage.getItem("session_id"),
     page: 1,
   });
+  console.log(favoriteMovies.total_results, watchlistMovies.total_results);
+
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
 
@@ -75,7 +79,7 @@ const MovieInformation = () => {
     await axios.post(
       `https://api.themoviedb.org/3/account/${
         user.id
-      }/favorite?api_key=${"985e679d5a289c2b7f9cf40b14ce5c1f"}&session_id=${localStorage.getItem(
+      }/favorite?api_key=${"83e503c339b79b35e59eb40deea54837"}&session_id=${localStorage.getItem(
         "session_id"
       )}`,
       {
@@ -91,7 +95,7 @@ const MovieInformation = () => {
     await axios.post(
       `https://api.themoviedb.org/3/account/${
         user.id
-      }/watchlist?api_key=${"985e679d5a289c2b7f9cf40b14ce5c1f"}&session_id=${localStorage.getItem(
+      }/watchlist?api_key=${"83e503c339b79b35e59eb40deea54837"}&session_id=${localStorage.getItem(
         "session_id"
       )}`,
       {
@@ -119,7 +123,7 @@ const MovieInformation = () => {
     );
   }
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <Grid container className={classes.containerSpaceAround}>
@@ -150,17 +154,12 @@ const MovieInformation = () => {
               gutterBottom
               style={{ marginLeft: "10px" }}
             >
-              {data?.vote_average.toFixed(1)}/10
+              {data?.vote_average}/10{" "}
             </Typography>
           </Box>
           <Typography variant="h6" align="center" gutterBottom>
             {data?.runtime} min | Language: {data?.spoken_languages[0]?.name}
           </Typography>
-          {data?.revenue > 0 ? (
-            <Typography variant="h6" align="center" gutterBottom>
-              Revenue: {Math.round(data?.revenue / 1000000)} Million Dollars
-            </Typography>
-          ) : null}
         </Grid>
         <Grid item className={classes.genreContainer}>
           {data?.genres?.map((genre, i) => (
