@@ -157,7 +157,7 @@ const MovieInformation = () => {
             {data?.runtime} min | Language: {data?.spoken_languages[0]?.name}
           </Typography>
           <Typography variant="h6" align="center" gutterBottom>
-            {data?.revenue / 1000000} USD
+            {Math.round(data?.revenue / 1000000)} USD
           </Typography>
         </Grid>
         <Grid item className={classes.genreContainer}>
