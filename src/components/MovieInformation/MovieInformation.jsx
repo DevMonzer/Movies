@@ -8,7 +8,6 @@ import {
   Box,
   CircularProgress,
   Rating,
-  useMediaQuery,
 } from "@mui/material";
 import {
   Movie as MovieIcon,
@@ -20,7 +19,7 @@ import {
   Remove,
   ArrowBack,
 } from "@mui/icons-material";
-import { Link, useParams, userParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 // Getting favorite/watchlist movies
