@@ -150,7 +150,7 @@ const MovieInformation = () => {
               gutterBottom
               style={{ marginLeft: "10px" }}
             >
-              {data?.vote_average}/10{" "}
+              {data?.vote_average.toFixed(1)}/10
             </Typography>
           </Box>
           <Typography variant="h6" align="center" gutterBottom>
