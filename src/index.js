@@ -13,7 +13,7 @@ import "./index.css";
 ReactDOM.render(
   <Provider store={store}>
     <ToggleColorModeProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="movies">
         <App />
       </BrowserRouter>
     </ToggleColorModeProvider>
