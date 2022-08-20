@@ -156,6 +156,9 @@ const MovieInformation = () => {
           <Typography variant="h6" align="center" gutterBottom>
             {data?.runtime} min | Language: {data?.spoken_languages[0]?.name}
           </Typography>
+          <Typography variant="h6" align="center" gutterBottom>
+            {data?.revenue / 1000000} USD
+          </Typography>
         </Grid>
         <Grid item className={classes.genreContainer}>
           {data?.genres?.map((genre, i) => (
