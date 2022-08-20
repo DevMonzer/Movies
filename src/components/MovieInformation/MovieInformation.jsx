@@ -41,7 +41,6 @@ const MovieInformation = () => {
   const { data, isFetching, error } = useGetMovieQuery(id);
   const { data: recommendations, isFetching: isRecommendationsFetching } =
     useGetRecommendationsQuery({ list: "/recommendations", movie_id: id });
-  // console.log(data);
   const { data: favoriteMovies } = useGetListQuery({
     listName: "favorite/movies",
     accountId: user.id,
@@ -120,7 +119,7 @@ const MovieInformation = () => {
     );
   }
 
-  // console.log(data);
+  console.log(data);
 
   return (
     <Grid container className={classes.containerSpaceAround}>
