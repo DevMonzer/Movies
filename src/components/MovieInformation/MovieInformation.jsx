@@ -39,7 +39,7 @@ const MovieInformation = () => {
   const { id } = useParams();
   const { user } = useSelector(userSelector);
   const { data, isFetching, error } = useGetMovieQuery(id);
-  // console.log(user.id);
+  console.log(data);
   const { data: recommendations, isFetching: isRecommendationsFetching } =
     useGetRecommendationsQuery({ list: "/recommendations", movie_id: id });
   const { data: favoriteMovies } = useGetListQuery({
@@ -54,7 +54,7 @@ const MovieInformation = () => {
     sessionId: localStorage.getItem("session_id"),
     page: 1,
   });
-  console.log(favoriteMovies.total_results, watchlistMovies.total_results);
+  // console.log(favoriteMovies.total_results, watchlistMovies.total_results);
 
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
