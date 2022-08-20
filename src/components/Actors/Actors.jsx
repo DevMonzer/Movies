@@ -73,10 +73,11 @@ const Actors = () => {
             {data?.name}
           </Typography>
           <Typography variant="h5" gutterBottom>
-            Born: {new Date(data?.birthday).toDateString()}
+            Born:{" "}
+            {new Date(data?.birthday).toDateString().split(" ").join(" - ")}
           </Typography>
           <Typography variant="h5" gutterBottom>
-            popularity: {data?.place_of_birth}
+            Hometown: {data?.place_of_birth}
           </Typography>
           <Typography variant="body1" align="justify" paragraph>
             {data?.biography || "Sorry, no biography yet..."}
