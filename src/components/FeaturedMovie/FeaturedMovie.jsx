@@ -17,7 +17,7 @@ const FeaturedMovie = ({ movie }) => {
   const classes = useStyles();
   // If we have no movie to display we return nothing
   if (!movie) return null;
-  console.log(movie);
+  // console.log(movie);
 
   // console.log('movie',movie);
   return (
