@@ -21,6 +21,7 @@ const Movies = () => {
     page,
     searchQuery,
   });
+  console.log(data);
   const lg = useMediaQuery((theme) => theme.breakpoints.only("lg"));
   const numberOfMovies = lg ? 17 : 19;
 
