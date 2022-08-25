@@ -7,7 +7,7 @@ This application includes user authentication, dark mode, sort movie on the basi
 Alan works as in-app voice assistant which create conversational experiences for Movies.
   
 Movies app watch live -> https://movies-show.vercel.app/
- 
+  
 <a href="https://ibb.co/t23x9WC"><img src="https://i.ibb.co/4SJYH5N/Capture.jpg" alt="Capture" border="0"></a>
 
 Series app watch live -> https://series-devmonzer.vercel.app/ 
