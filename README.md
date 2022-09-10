@@ -13,7 +13,7 @@ Movies app watch live -> https://movies-show.vercel.app/
 Series app watch live -> https://series-devmonzer.vercel.app/  
 
 <a href="https://ibb.co/6PQTgWc"><img src="https://i.ibb.co/9TP1srm/Capture.jpg" alt="Capture" border="0"></a> 
-
+ 
 ## What to do  
 1. Clone this repo      
 2. Run `npm install` to download the node_modules folder  
