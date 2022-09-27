@@ -20,7 +20,7 @@ Series app watch live -> https://series-devmonzer.vercel.app/
 npm install
 ```
 
-# Authenticate yourself to the TMDB API to use their data
+## Authenticate yourself to the TMDB API to use their data
 
 ### Run
 
