@@ -13,14 +13,14 @@ Movies app watch live -> https://movies-show.vercel.app/
 Series app watch live -> https://series-devmonzer.vercel.app/  
 
 <a href="https://ibb.co/6PQTgWc"><img src="https://i.ibb.co/9TP1srm/Capture.jpg" alt="Capture" border="0"></a> 
- 
+
+### Authenticate yourself to the TMDB API to use their data
+
 ### Install dependencies
 
 ```bash
 npm install
 ```
-
-## Authenticate yourself to the TMDB API to use their data
 
 ### Run
 
