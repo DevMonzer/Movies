@@ -12,7 +12,6 @@ import {
 import { MovieList, Pagination } from "..";
 
 const Actors = () => {
-  // Is used to apply js styles
   const classes = useStyles();
   // Getting the actorId from the URL or the request
   const { id } = useParams();
@@ -28,8 +27,8 @@ const Actors = () => {
   // Showing a spinner while the actor data is being loaded
   if (isFetching || isActorsMovieFetching) {
     return (
-      <Box display="flex" justifyContent="center" alignItems="center">
-        <CircularProgress size="8rem" />
+      <Box display='flex' justifyContent='center' alignItems='center'>
+        <CircularProgress size='8rem' />
       </Box>
     );
   }
@@ -37,11 +36,11 @@ const Actors = () => {
   // Showing an error message when there's no fetched data
   if (error) {
     return (
-      <Box display="flex" justifyContent="center" alignItems="center">
+      <Box display='flex' justifyContent='center' alignItems='center'>
         <Button
           startIcon={<ArrowBack />}
           onClick={() => history.goBack()}
-          color="primary"
+          color='primary'
         >
           Go Back
         </Button>
@@ -69,24 +68,24 @@ const Actors = () => {
             flexDirection: "column",
           }}
         >
-          <Typography variant="h2" gutterBottom>
+          <Typography variant='h2' gutterBottom>
             {data?.name}
           </Typography>
-          <Typography variant="h5" gutterBottom>
+          <Typography variant='h5' gutterBottom>
             Born:{" "}
             {new Date(data?.birthday).toDateString().split(" ").join(" - ")}
           </Typography>
-          <Typography variant="h5" gutterBottom>
+          <Typography variant='h5' gutterBottom>
             Hometown: {data?.place_of_birth}
           </Typography>
-          <Typography variant="body1" align="justify" paragraph>
+          <Typography variant='body1' align='justify' paragraph>
             {data?.biography || "Sorry, no biography yet..."}
           </Typography>
-          <Box marginTop="2rem" display="flex" justifyContent="space-around">
+          <Box marginTop='2rem' display='flex' justifyContent='space-around'>
             <Button
-              variant="contained"
-              color="primary"
-              target="_blank"
+              variant='contained'
+              color='primary'
+              target='_blank'
               href={`https://www.imdb.com/name/${data?.imdb_id}`}
             >
               IMDB
@@ -94,15 +93,15 @@ const Actors = () => {
             <Button
               startIcon={<ArrowBack />}
               onClick={() => history.goBack()}
-              color="primary"
+              color='primary'
             >
               Back
             </Button>
           </Box>
         </Grid>
       </Grid>
-      <Box margin="2rem 0" width="100%">
-        <Typography variant="h2" align="center" gutterBottom>
+      <Box margin='2rem 0' width='100%'>
+        <Typography variant='h2' align='center' gutterBottom>
           Movies
         </Typography>
         {actorMovies ? (
