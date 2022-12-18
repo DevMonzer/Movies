@@ -11,12 +11,12 @@ const MovieList = ({ movies, numberOfMovies, excludeFirst }) => {
   return (
     <Grid container className={classes.movieContainer}>
       {movies.results.slice(startFrom, numberOfMovies).map((movie, i) => {
-        if (
-          movie.title === "I Don't Like Younger Men 4" ||
-          movie.title === "Fifty Shades of Grey"
-        ) {
-          return false;
-        }
+        // if (
+        //   movie.title === "I Don't Like Younger Men 4" ||
+        //   movie.title === "Fifty Shades of Grey"
+        // ) {
+        //   return false;
+        // }
         return <Movie key={i} movie={movie} i={i} />;
       })}
     </Grid>
