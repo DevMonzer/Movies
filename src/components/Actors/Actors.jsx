@@ -13,7 +13,7 @@ import { MovieList, Pagination } from "..";
 
 const Actors = () => {
   // Is used to apply js styles
-  // const classes = useStyles();
+  const classes = useStyles();
   // Getting the actorId from the URL or the request
   const { id } = useParams();
   const [page, setPage] = useState(1);
